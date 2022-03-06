@@ -12,7 +12,6 @@ class Boxplots:
 
 if __name__ == '__main__':
     B =Boxplots()
-    
     B.plot()
 
     

@@ -17,6 +17,5 @@ class IQR:
         print(u'在上下限之外的概率=%.4f%%'%(100*probOutLiers))
 
 if __name__=='__main__':
-    
     I = IQR()
     I.Calculate_IQR()

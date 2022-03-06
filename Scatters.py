@@ -22,8 +22,7 @@ class Scatters:
         print (r1)
         print (r2)
         print (r3)
-        plt.show()
-        
+        plt.show()  
 
 if __name__ =='__main__':
     sc = Scatters()

@@ -30,3 +30,14 @@ plt.scatter(Samples_zero_mean[0], Samples_zero_mean[1])
 plt.arrow(0, 0, eig_vec.T[0,0], eig_vec.T[0,1], head_width = 0.02, head_length = 0.1, fc = 'r', ec = 'r')
 plt.arrow(0, 0, eig_vec.T[1,0], eig_vec.T[1,1], head_width = 0.02, head_length = 0.1, fc = 'r', ec = 'r')
 plt.show()
+
+#按照特征值降序，排列对应的特征向量
+eig_pairs = [(eig_val[i],eig_vec.T[i]) for i in range(len(eig_val))]
+eig_pairs.sort(key = lambda x: x[0], reverse=True)
+martix_U = np.hstack((eig_pairs[0][1].reshape(2,1), eig_pairs[1][1].reshape(2,1)))
+print(martix_U)
+martix_F = martix_U.T.dot(Samples_zero_mean).T
+print(martix_F.T)
+plt.ylim(ymin=-1.5,ymax=1.5)
+plt.scatter(martix_F[:,0], martix_F[:,1],color = 'b')
+plt.show()
